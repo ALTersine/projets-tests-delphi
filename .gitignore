@@ -1,7 +1,9 @@
-*dcu
+*.dcu
 *.exe
+*.res
 __history/
 Win32/
 Win64/
 *.db
 .env
+*.dproj.local

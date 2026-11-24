@@ -24,8 +24,8 @@ Je m'appelle Ersine. Je suis développeuse (web/mobile) et je démarre le 4 janv
 - Delphi 13 Community Edition, Windows, application VCL. Licence : usage d'apprentissage sur mon poste personnel.
 - Base de données : la Community Edition ne se connecte pas à Oracle. Pour les exercices de données, on utilise **SQLite via FireDAC** (déjà testé), avec les unités `FireDAC.Phys.SQLite`, `FireDAC.Phys.SQLiteWrapper.Stat` et `FireDAC.DApt` dans le `uses`.
 - Shell : PowerShell. Git est installé.
-- Compiler en ligne de commande : charger les variables d'environnement avec `rsvars.bat` (dossier `bin` de Delphi, à localiser avec `Get-ChildItem "C:\Program Files (x86)\Embarcadero\Studio" -Directory`), puis `msbuild <Projet>.dproj /t:Build /p:config=Debug /p:Platform=Win32`. Ne suppose pas le numéro de version du dossier : vérifie-le.
-- Le **débogage pas à pas, le concepteur de fiches et la palette d'outils restent dans l'IDE**. Tu lis et analyses les fichiers texte (`.pas`, `.dfm`, `.dpr`, `.dproj`), tu compiles et tu m'expliques les erreurs ; je construis les écrans et je lance dans l'IDE.
+- **Compilation : uniquement dans l'IDE (F9 / Ctrl+F9).** La Community Edition refuse la compilation en ligne de commande (`msbuild` répond « This version of the product does not support command line compiling », constaté avec Delphi 13, dossier `Studio\37.0`). Ne tente pas de compiler depuis le shell : c'est moi qui compile, et je te montre le message d'erreur exact (code, fichier, ligne:colonne) si j'en ai un.
+- Le **débogage pas à pas, la compilation, le concepteur de fiches et la palette d'outils restent dans l'IDE**. Tu lis et analyses les fichiers texte (`.pas`, `.dfm`, `.dpr`, `.dproj`) et tu m'expliques les erreurs que je te montre ; je construis les écrans, je compile et je lance dans l'IDE.
 
 ## Organisation du projet
 
