@@ -11,7 +11,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Header: TPanel
+  object PanelHeader: TPanel
     Left = 0
     Top = 0
     Width = 374
@@ -20,7 +20,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
     Color = clSkyBlue
     ParentBackground = False
     TabOrder = 0
-    object Titre: TLabel
+    object LabelH1Calculatrice: TLabel
       Left = 1
       Top = 1
       Width = 372
@@ -36,7 +36,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       ParentFont = False
       ExplicitWidth = 305
     end
-    object CalculEnCours: TLabel
+    object LabelSymboleDuCalculEnCours: TLabel
       Left = 327
       Top = 73
       Width = 7
@@ -64,7 +64,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       TabOrder = 0
       Text = '0'
     end
-    object Panel1: TPanel
+    object PanelSeparateurHeader: TPanel
       Left = 1
       Top = 119
       Width = 372
@@ -75,7 +75,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       TabOrder = 1
     end
   end
-  object Body: TPanel
+  object PanelBody: TPanel
     Left = 0
     Top = 161
     Width = 374
@@ -84,55 +84,8 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
     Color = clSkyBlue
     ParentBackground = False
     TabOrder = 1
-    object two: TButton
-      Left = 104
-      Top = 221
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      OnClick = oneClick
-    end
-    object one: TButton
-      Left = 21
-      Top = 221
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '1'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      OnClick = oneClick
-    end
-    object three: TButton
-      Left = 187
-      Top = 221
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '3'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      OnClick = oneClick
-    end
-    object clear: TButton
+    ExplicitTop = 156
+    object ButtonReset: TButton
       Left = 21
       Top = 321
       Width = 70
@@ -145,10 +98,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
-      OnClick = clearClick
+      TabOrder = 0
+      OnClick = ButtonResetClick
     end
-    object zero: TButton
+    object ButtonZero: TButton
       Left = 104
       Top = 321
       Width = 70
@@ -161,10 +114,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
-      OnClick = oneClick
+      TabOrder = 1
+      OnClick = ButtonUnClick
     end
-    object point: TButton
+    object ButtonVirgule: TButton
       Left = 187
       Top = 321
       Width = 70
@@ -177,106 +130,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 5
-      OnClick = pointClick
+      TabOrder = 2
+      OnClick = ButtonVirguleClick
     end
-    object eight: TButton
-      Left = 104
-      Top = 48
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '8'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 6
-      OnClick = oneClick
-    end
-    object five: TButton
-      Left = 104
-      Top = 136
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '5'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 7
-      OnClick = oneClick
-    end
-    object nine: TButton
-      Left = 187
-      Top = 48
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '9'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 8
-      OnClick = oneClick
-    end
-    object seven: TButton
-      Left = 21
-      Top = 48
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '7'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 9
-      OnClick = oneClick
-    end
-    object six: TButton
-      Left = 187
-      Top = 136
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '6'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 10
-      OnClick = oneClick
-    end
-    object four: TButton
-      Left = 21
-      Top = 136
-      Width = 70
-      Height = 70
-      Align = alCustom
-      Caption = '4'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -40
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 11
-      OnClick = oneClick
-    end
-    object correct: TButton
+    object ButtonCorriger: TButton
       Left = 279
       Top = 48
       Width = 70
@@ -289,10 +146,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 12
-      OnClick = correctClick
+      TabOrder = 3
+      OnClick = ButtonCorrigerClick
     end
-    object multiple: TButton
+    object ButtonMultiplier: TButton
       Left = 279
       Top = 195
       Width = 70
@@ -305,10 +162,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 13
+      TabOrder = 4
       OnClick = calculClick
     end
-    object substract: TButton
+    object ButtonSoustraire: TButton
       Left = 279
       Top = 268
       Width = 70
@@ -321,10 +178,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 14
+      TabOrder = 5
       OnClick = calculClick
     end
-    object add: TButton
+    object ButtonAdditionner: TButton
       Left = 279
       Top = 341
       Width = 70
@@ -337,10 +194,10 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 15
+      TabOrder = 6
       OnClick = calculClick
     end
-    object divide: TButton
+    object ButtonDiviser: TButton
       Left = 279
       Top = 120
       Width = 70
@@ -353,11 +210,165 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 16
+      TabOrder = 7
       OnClick = calculClick
     end
+    object PanelNombres: TPanel
+      Left = 21
+      Top = 48
+      Width = 236
+      Height = 243
+      BevelOuter = bvNone
+      Color = clSkyBlue
+      ParentBackground = False
+      TabOrder = 8
+      object ButtonCinq: TButton
+        Left = 83
+        Top = 96
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '5'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnClick = ButtonUnClick
+      end
+      object ButtonQuatre: TButton
+        Left = 0
+        Top = 96
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '4'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        OnClick = ButtonUnClick
+      end
+      object ButtonNeuf: TButton
+        Left = 166
+        Top = 8
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '9'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        OnClick = ButtonUnClick
+      end
+      object ButtonUn: TButton
+        Left = 0
+        Top = 181
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+        OnClick = ButtonUnClick
+      end
+      object ButtonSix: TButton
+        Left = 166
+        Top = 96
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '6'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 4
+        OnClick = ButtonUnClick
+      end
+      object ButtonTrois: TButton
+        Left = 166
+        Top = 181
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '3'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+        OnClick = ButtonUnClick
+      end
+      object ButtonDeux: TButton
+        Left = 83
+        Top = 181
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 6
+        OnClick = ButtonUnClick
+      end
+      object ButtonSept: TButton
+        Left = 0
+        Top = 8
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '7'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 7
+        OnClick = ButtonUnClick
+      end
+      object ButtonHuit: TButton
+        Left = 83
+        Top = 8
+        Width = 70
+        Height = 70
+        Align = alCustom
+        Caption = '8'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 8
+        OnClick = ButtonUnClick
+      end
+    end
   end
-  object Footer: TPanel
+  object PanelFooter: TPanel
     Left = 0
     Top = 616
     Width = 374
@@ -366,7 +377,7 @@ object frmEx02_Calculatrice: TfrmEx02_Calculatrice
     Color = clSkyBlue
     ParentBackground = False
     TabOrder = 2
-    object Panel2: TPanel
+    object PanelSeparateurFooter: TPanel
       Left = 1
       Top = 1
       Width = 372

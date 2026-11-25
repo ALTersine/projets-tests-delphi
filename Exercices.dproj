@@ -132,6 +132,7 @@
             <Form>frmMenu</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uPresentation.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -4,15 +4,24 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TfrmMenu = class(TForm)
-    BtnCalculatrice: TButton;
+    ButtonCalculatrice: TButton;
     LabelH1Menu: TLabel;
     LabelH2Menu: TLabel;
-    procedure BtnCalculatriceClick(Sender: TObject);
+    PanelPresentation: TPanel;
+    PanelMenu: TPanel;
+    LabelH2Presentation: TLabel;
+    EditPresentation: TEdit;
+    ButtonPresentation: TButton;
+    procedure ButtonCalculatriceClick(Sender: TObject);
+    procedure ButtonPresentationClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    var
+    FDefaultH1Caption: string;
     { Déclarations privées }
   public
     { Déclarations publiques }
@@ -20,30 +29,44 @@ type
 
 var
   frmMenu: TfrmMenu;
-  //frmEx02_Calculatrice: TfrmEx02_Calculatrice;
 
 implementation
 
 uses
-  uEx02_Calculatrice;
+  uEx02_Calculatrice, uPresentation;
+
+//const PRENOM = 'Ersine';
 
 {$R *.dfm}
 
-procedure TfrmMenu.BtnCalculatriceClick(Sender: TObject);
+procedure TfrmMenu.FormCreate(Sender: TObject);
 begin
-  //frmEx02_Calculatrice.Show;
-  //frmEx02_Calculatrice.ShowModal;
+  FDefaultH1Caption := LabelH1Menu.Caption;
+end;
+
+procedure TfrmMenu.ButtonCalculatriceClick(Sender: TObject);
+begin
+
   var
   Calculatrice: TfrmEx02_Calculatrice;
   Calculatrice := TfrmEx02_Calculatrice.Create(Self);
-  //Version fuite de mémoire
-  //Calculatrice := TfrmEx02_Calculatrice.Create(Nil);
 
   try
     Calculatrice.ShowModal;
   finally
     Calculatrice.Free;
   end;
+end;
+
+//procedure TfrmMenu.BtnPresentationClick(Sender: TObject);
+//begin
+//  Prenom:='Test';
+//end;
+
+procedure TfrmMenu.ButtonPresentationClick(Sender: TObject);
+begin
+  uPresentation.Prenom := Trim(EditPresentation.Text);
+  LabelH1Menu.Caption := H1MenuCaption(FdefaultH1Caption);
 end;
 
 end.

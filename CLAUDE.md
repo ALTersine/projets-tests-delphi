@@ -38,7 +38,7 @@ Je m'appelle Ersine. Je suis développeuse (web/mobile) et je démarre le 4 janv
 
 ## Conventions de code Delphi que je dois apprendre
 
-- Classes en `T`, interfaces en `I`, champs privés en `F`, paramètres en `A`, composants nommés avec un préfixe (`btnCalculer`, `edtNombre1`, `lblResultat`).
+- Classes en `T`, interfaces en `I`, champs privés en `F`, paramètres en `A`, composants nommés avec le **nom réel de leur classe sans le `T`** suivi de leur rôle (`ButtonCalculer` pour un `TButton`, `EditNombre1` pour un `TEdit`, `LabelResultat` pour un `TLabel`, `PanelPresentation` pour un `TPanel`). Choix d'Ersine : se familiariser avec les vrais noms des objets VCL plutôt qu'avec des abréviations (`btn`, `edt`, `lbl`). Les gestionnaires générés par l'IDE suivent ce nom (`ButtonCalculerClick`).
 - Pas de logique de calcul ou de règle dans les gestionnaires d'événements dès que l'exercice le permet : sépare-la dans une classe ou une fonction testable. C'est la préparation au découpage en couches du vrai WMS.
 - Tout objet que je crée sans propriétaire doit avoir un `try ... finally ... Free`. Fais-moi dire à voix haute **qui possède quoi**.
 - Pas de nombre magique ni de texte en dur répété : constantes nommées.

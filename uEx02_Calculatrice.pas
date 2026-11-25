@@ -8,37 +8,38 @@ uses
 
 type
   TfrmEx02_Calculatrice = class(TForm)
-    Titre: TLabel;
-    Header: TPanel;
-    Body: TPanel;
-    Footer: TPanel;
+    LabelH1Calculatrice: TLabel;
+    PanelHeader: TPanel;
+    PanelBody: TPanel;
+    PanelFooter: TPanel;
     EditAffichage: TEdit;
-    Panel1: TPanel;
-    Panel2: TPanel;
+    PanelSeparateurHeader: TPanel;
+    PanelSeparateurFooter: TPanel;
     ButtonEgal: TButton;
-    two: TButton;
-    one: TButton;
-    three: TButton;
-    six: TButton;
-    five: TButton;
-    four: TButton;
-    nine: TButton;
-    eight: TButton;
-    seven: TButton;
-    clear: TButton;
-    zero: TButton;
-    point: TButton;
-    correct: TButton;
-    multiple: TButton;
-    substract: TButton;
-    add: TButton;
-    divide: TButton;
-    CalculEnCours: TLabel;
-    procedure oneClick(Sender: TObject);
+    ButtonDeux: TButton;
+    ButtonUn: TButton;
+    ButtonTrois: TButton;
+    ButtonSix: TButton;
+    ButtonCinq: TButton;
+    ButtonQuatre: TButton;
+    ButtonNeuf: TButton;
+    ButtonHuit: TButton;
+    ButtonSept: TButton;
+    ButtonReset: TButton;
+    ButtonZero: TButton;
+    ButtonVirgule: TButton;
+    ButtonCorriger: TButton;
+    ButtonMultiplier: TButton;
+    ButtonSoustraire: TButton;
+    ButtonAdditionner: TButton;
+    ButtonDiviser: TButton;
+    LabelSymboleDuCalculEnCours: TLabel;
+    PanelNombres: TPanel;
+    procedure ButtonUnClick(Sender: TObject);
     procedure calculClick(Sender: TObject);
-    procedure clearClick(Sender: TObject);
-    procedure pointClick(Sender: TObject);
-    procedure correctClick(Sender: TObject);
+    procedure ButtonResetClick(Sender: TObject);
+    procedure ButtonVirguleClick(Sender: TObject);
+    procedure ButtonCorrigerClick(Sender: TObject);
     procedure ButtonEgalClick(Sender: TObject);
   private
     FChoixOperationFait: Boolean;
@@ -57,18 +58,18 @@ implementation
 {$R *.dfm}
 
 
-procedure TfrmEx02_Calculatrice.clearClick(Sender: TObject);
+procedure TfrmEx02_Calculatrice.ButtonResetClick(Sender: TObject);
 begin
   FChoixOperationFait:=False;
   FValeur1:=0;
   FValeur2:=0;
   FResultat:=0;
   FTypeOperation:=' ';
-  CalculEnCours.Caption:='';
+  LabelSymboleDuCalculEnCours.Caption:='';
   EditAffichage.Text:='0';
 end;
 
-procedure TfrmEx02_Calculatrice.correctClick(Sender: TObject);
+procedure TfrmEx02_Calculatrice.ButtonCorrigerClick(Sender: TObject);
 
 Var
 AffichageLength: Integer;
@@ -79,7 +80,7 @@ begin
   if EditAffichage.Text='0' then
   begin
       FChoixOperationFait:=False;
-      CalculEnCours.Caption:='';
+      LabelSymboleDuCalculEnCours.Caption:='';
   end else
   begin
     EditAffichage.Text:=LeftStr(EditAffichage.Text,AffichageLength-1);
@@ -88,7 +89,7 @@ begin
 
 end;
 
-procedure TfrmEx02_Calculatrice.oneClick(Sender: TObject);
+procedure TfrmEx02_Calculatrice.ButtonUnClick(Sender: TObject);
 begin
   if(EditAffichage.Text='0') or FChoixOperationFait then
   begin
@@ -100,11 +101,11 @@ begin
   end;
 end;
 
-procedure TfrmEx02_Calculatrice.pointClick(Sender: TObject);
+procedure TfrmEx02_Calculatrice.ButtonVirguleClick(Sender: TObject);
 begin
   if Pos(',',EditAffichage.Text,1)=0 then
   begin
-      EditAffichage.Text:=EditAffichage.Text+point.Caption;
+      EditAffichage.Text:=EditAffichage.Text+ButtonVirgule.Caption;
   end;
 end;
 
@@ -134,7 +135,7 @@ begin
   if FResultat<>0 then ButtonEgal.OnClick(Sender);
 
   FTypeOperation:=(Sender as TButton).Caption[1];
-  CalculEnCours.Caption:=FTypeOperation;
+  LabelSymboleDuCalculEnCours.Caption:=FTypeOperation;
   FChoixOperationFait:=True;
   FValeur1:=StrToFloat(EditAffichage.Text);
 
